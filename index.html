@@ -5,53 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/jarras/css/stilos.css">
-
+    <link rel="stylesheet" href="/css/styles.css">
     <title>Document</title>
 </head>
 
-<body>
+<body background="/resources/img/Menu.jpg">
 
-
-
-    <div id="jarraGrande">
-
-        <div id="imagenGrande">
-
-        </div>
-
-        <button id="vaciarG" onclick="vaciarGrande()">vaciar Grande</button>
-
-        <button id="rellenarG" onclick="rellenarGrande()">rellenar Grande</button>
-
-        <button onclick="pasarGrandePequeña()">pasar Grande a Pequeña</button>
+    <div id="jugar">
+        <img src="/resources/imgMenu/JUGAR.png" alt="">
     </div>
 
-
-
-    <div id="jarraPequeña">
-
-        <div id="imagenPequeña">
-
-        </div>
-
-        <button id="" onclick="vaciarPequeña()">vaciar Pequeña</button>
-
-        <button id="" onclick="rellenarPequeña()">rellenar Pequeña</button>
-
-        <button onclick="pasarPequeñaGrande()">pasar Pequeña a Grande</button>
-
+    <div id="reglas">
+        <img src="/resources/imgMenu/REGLAS.png" alt="">
     </div>
 
+    <!-- el pinche sonido no se reproduce hasta qque haya un evento, quieren hacerlo hasatq euse pase el cursor por los botones? -->
+    <audio id="backgroundAudio" loop controls style="display: none">
+        <source src="/resources/sounds/soundMenu.mp3" type="audio/mp3">
+    </audio>
+
+
+    <script>
+        //me dio hueva poner otro archivo js y por el guion se queda aqui jaja
+
+        let boton1 = document.getElementById('jugar');
+        boton1.addEventListener('click', () => {
+
+            setTimeout(() => {
+                window.location.href = 'Game.html'
+            }, 250)
+
+        });
 
 
 
+        let boton = document.getElementById('reglas');
+        boton.addEventListener('click', () => {
 
+            setTimeout(() => {
+                window.location.href = '#'
+            }, 250)
 
-    <script src="/jarras/js/Jarras.js"></script>
-
-    <script src="/jarras/js/main.js"></script>
-
+        });
+    </script>
 
 </body>
 
