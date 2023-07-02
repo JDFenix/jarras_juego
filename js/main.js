@@ -20,11 +20,11 @@ function pasarPequeñaGrande() {
     jarra.pasarPequeñaGrande()
 }
 
-function pasarGrandePequeña(){
+function pasarGrandePequeña() {
     jarra.pasarGrandePequeña()
 }
 
-// let boton = document.getElementById('bob');
-// boton.addEventListener('click', () => {
-//     alert('¡Hola!');
-// });
+let boton = document.getElementById('vaciarG');
+boton.addEventListener('click', () => {
+    jarra.vaciarGrande()
+});
