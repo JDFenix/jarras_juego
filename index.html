@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="/css/styles.css">
-    <title>Document</title>
+    <title>Inicio</title>
 </head>
 
 <body background="/resources/img/Menu.jpg">
@@ -23,11 +23,7 @@
         <img id="imagen" src="/resources/imgMenu/gifbobcaminando.gif"
     </marquee>
    
-    <!-- el pinche sonido no se reproduce hasta qque haya un evento, quieren hacerlo hasatq euse pase el cursor por los botones? -->
-    <audio id="backgroundAudio" loop controls style="display: none">
-        <source src="/resources/sounds/soundMenu.mp3" type="audio/mp3">
-    </audio>
-
+ 
 
     <script>
         //me dio hueva poner otro archivo js y por el guion se queda aqui jaja
@@ -47,7 +43,7 @@
         boton.addEventListener('click', () => {
 
             setTimeout(() => {
-                window.location.href = '#'
+                window.location.href = 'reglas.html'
             }, 250)
 
         });

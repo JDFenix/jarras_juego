@@ -23,8 +23,3 @@ function pasarPequeñaGrande() {
 function pasarGrandePequeña() {
     jarra.pasarGrandePequeña()
 }
-
-let boton = document.getElementById('vaciarG');
-boton.addEventListener('click', () => {
-    jarra.vaciarGrande()
-});

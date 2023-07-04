@@ -1,7 +1,7 @@
 class Jarra {
   jarraGrande = [];
   jarraPequeña = [];
-  
+  capacidadJarragrande;
 
   constructor() {
     this.validarTamaño();
@@ -27,9 +27,9 @@ class Jarra {
     let div = document.getElementById('llenadoGrande');
     let gif = document.createElement("img");
 
-    gif.style.width = '100px'
+    gif.style.width = '50px'
     gif.style.position = 'absolute'
-    gif.src = "/resources/img/pruebaGif.gif"
+    gif.src = "#"
 
     div.appendChild(gif)
     return gif
@@ -39,7 +39,7 @@ class Jarra {
     let div = document.getElementById('llenadoPequeño');
     let gif = document.createElement("img");
 
-    gif.style.width = '100px'
+    gif.style.width = '50px'
     gif.style.position = 'absolute'
     gif.src = "/resources/img/pruebaGif.gif"
 
@@ -52,7 +52,7 @@ class Jarra {
     let img = document.createElement("img");
 
     img.src = this.jarraGrandeImagenes[0];
-    img.style.width = "250px";
+    img.style.width = "150px";
     img.style.position = "absolute";
 
     div.appendChild(img);
@@ -63,7 +63,7 @@ class Jarra {
     let img = document.createElement("img");
 
     img.src = this.jarraPequeñaImagenes[0];
-    img.style.width = "250px";
+    img.style.width = "150px";
     img.style.position = "absolute";
 
     div.appendChild(img);
@@ -75,7 +75,7 @@ class Jarra {
 
     let img = document.createElement("img");
     img.src = this.jarraGrandeImagenes[0];
-    img.style.width = "250px";
+    img.style.width = "150px";
     img.style.position = "absolute";
 
     div.appendChild(img);
@@ -89,7 +89,7 @@ class Jarra {
     div.innerHTML = "";
     let img = document.createElement("img");
     img.src = this.jarraPequeñaImagenes[0];
-    img.style.width = "250px";
+    img.style.width = "150px";
     img.style.position = "absolute";
 
     div.appendChild(img);
@@ -100,21 +100,20 @@ class Jarra {
 
   rellenarGrande() {
     let divGif = document.getElementById('llenadoGrande');
-    let gif = this.gifllenadoGrande()
 
     setTimeout(() => {
       let div = document.getElementById('imagenGrande');
-      divGif.removeChild(gif)
+    
       div.innerHTML = "";
 
       let img = document.createElement("img");
       img.id = "img5"
       img.src = this.jarraGrandeImagenes[5];
-      img.style.width = "170px";
+      img.style.width = "100px";
       img.style.position = "absolute";
 
       div.appendChild(img)
-    }, 1500)
+    }, 500)
 
     while (this.jarraGrande.length < 5) {
       this.jarraGrande.push(1);
@@ -125,21 +124,21 @@ class Jarra {
   rellenarPequeña() {
 
     let divGif = document.getElementById('llenadoPequeño');
-    let gif = this.gifllenadoPequeño()
+   
 
     setTimeout(() => {
       let div = document.getElementById('imagenPequeña');
-      divGif.removeChild(gif)
+     
       div.innerHTML = "";
 
       let img = document.createElement("img");
       img.src = this.jarraPequeñaImagenes[3];
       img.id = "imgp3"
-      img.style.width = "250px";
+      img.style.width = "150px";
       img.style.position = "absolute";
 
       div.appendChild(img)
-    }, 1500)
+    }, 500)
 
     while (this.jarraPequeña.length < 3) {
       this.jarraPequeña.push(1);
@@ -158,8 +157,6 @@ class Jarra {
     this.actualizarImagenes();
   }
 
-
-  
   pasarGrandePequeña() {
     while (this.jarraGrande.length > 0 && this.jarraPequeña.length < 3) {
       this.jarraGrande.pop(1);
@@ -171,14 +168,9 @@ class Jarra {
     this.actualizarImagenes();
   }
 
-
-
   actualizarImagenes() {
     if (this.jarraGrande.length == 5) {
       this.rellenarGrande();
-    }
-    else if(this.jarraGrande.length ==0){
-      this.vaciarGrande()
     }
     else if (this.jarraGrande.length == 2) {
       let div = document.getElementById('imagenGrande');
@@ -187,7 +179,7 @@ class Jarra {
       let img = document.createElement("img");
       img.id = "img2"
       img.src = this.jarraGrandeImagenes[2];
-      img.style.width = "200px";
+      img.style.width = "100px";
       img.style.position = "absolute";
 
       div.appendChild(img)
@@ -198,42 +190,26 @@ class Jarra {
       let img = document.createElement("img");
       img.id = "img4"
       img.src = this.jarraGrandeImagenes[4];
-      img.style.width = "200px";
+      img.style.width = "100px";
       img.style.position = "absolute";
 
       div.appendChild(img)
     }
     let divGrande = document.getElementById('imagenGrande');
     let imgGrande = divGrande.querySelector("img");
-    imgGrande.style.width = "250px"
+    imgGrande.style.width = "150px"
     imgGrande.src = this.jarraGrandeImagenes[this.jarraGrande.length];
 
     if (this.jarraPequeña.length == 0)
       this.vaciarPequeña()
 
-    else if (this.jarraPequeña.length === 3)
+    else if (this.jarraPequeña.length == 3)
       this.rellenarPequeña()
 
-    else if(this.jarraPequeña.length === 2){
-      let divGif = document.getElementById('llenadoPequeño');
-    let gif = this.gifllenadoPequeño()
-
-    setTimeout(() => {
-      let div = document.getElementById('imagenPequeña');
-      divGif.removeChild(gif)
-      div.innerHTML = "";
-
-      let img = document.createElement("img");
-      img.src = this.jarraPequeñaImagenes[2];
-      img.id = "imgp2"
-      img.style.width = "250px";
-      img.style.position = "absolute";
-
-      div.appendChild(img)
-    }, 1500)
-    }
+    let divPequeña = document.getElementById('imagenPequeña');
+    let imgPequeña = divPequeña.querySelector("img");
+    imgPequeña.src = this.jarraPequeñaImagenes[this.jarraPequeña.length];
   }
-  
 
   validarTamaño() {
     let div = document.createElement('div')
@@ -256,13 +232,13 @@ class Jarra {
         document.body.appendChild(div)
         this.reiniciarJuego()
       }
-    }, 2000);
+    }, 1000);
   }
 
   reiniciarJuego() {
 
     setTimeout(() => {
       window.location.href = 'Index.html'
-    }, 4500)
+    }, 2500)
   }
 }
